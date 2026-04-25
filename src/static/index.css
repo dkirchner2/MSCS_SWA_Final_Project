@@ -1,0 +1,44 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    text-align: center;
+    background-color: midnightblue;
+    color: lavender;
+    font-weight: lighter;
+    font-family: monospace;
+}
+
+#heading {
+    color: lightsteelblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.result-list {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+#submit-button {
+    color: lavender;
+    background-color: mediumorchid;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#results {
+    display: none;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: lavender;
+    padding: 5px 10px;
+}

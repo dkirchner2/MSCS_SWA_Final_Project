@@ -1,3 +1,4 @@
-.idea/
 .DS_Store
 src/__pycache__/
+src/analyzer/__pycache__/
+src/collector/__pycache__/

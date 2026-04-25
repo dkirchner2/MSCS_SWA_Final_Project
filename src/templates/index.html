@@ -1,0 +1,113 @@
+<!doctype html>
+
+<head>
+    <title>ClimateCompare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+
+<body>
+    <div id="main-content">
+        <div id="main-headings">
+            <h1 id="heading">ClimateCompare</h1>
+            <h3>Please select at least one city: *</h3>
+            <p>*Data only available for the 50 most populous US metropolitan areas</p>
+        </div>
+        <div id="main-option-inputs">
+            <div id="location-form">
+                City 1: <input type="text" name="city1" id="city1"><br>
+                <div class="search-results" id="search1">
+                    <ul id="list1" class="result-list"></ul>
+                </div>
+                City 2: <input disabled type="text" name="city2" id="city2"><br>
+                <div class="search-results" id="search2">
+                    <ul id="list2" class="result-list"></ul>
+                </div>
+                City 3: <input disabled type="text" name="city3" id="city3"><br>
+                <div class="search-results" id="search3">
+                    <ul id="list3" class="result-list"></ul>
+                </div>
+                City 4: <input disabled type="text" name="city4" id="city4"><br>
+                <div class="search-results" id="search4">
+                    <ul id="list4" class="result-list"></ul>
+                </div>
+                City 5: <input disabled type="text" name="city5" id="city5"><br>
+                <div class="search-results" id="search5">
+                    <ul id="list5" class="result-list"></ul>
+                </div>
+                <button id="submit-button">Submit</button>
+            </div>
+        </div>
+        <div id="results">
+            <h2>Average monthly weather data for selected cities - 5-year mean</h2>
+            <table id="mean-results-table">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h2>Average monthly weather data for selected cities - 5-year maximum</h2>
+            <table id="max-results-table">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h2>Average monthly weather data for selected cities - 5-year minimum</h2>
+            <table id="min-results-table">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <script type="text/javascript">
+        initLocations({{ locations| tojson }});
+    </script>
+</body>
