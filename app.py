@@ -1,9 +1,5 @@
 from flask import Flask, request, render_template, jsonify
 from datetime import datetime
-import sys
-import os
-myDir = os.getcwd()
-sys.path.append(myDir)
 from collector.data_fetcher import initialize_data, get_location_data, fetch_daily_weather, get_city_weather_data
 from analyzer.data_analyzer import get_monthly_weather_data
 
