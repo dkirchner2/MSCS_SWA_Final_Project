@@ -14,12 +14,12 @@ def main():
     return render_template('index.html', locations=location_dict)
 
 
-@app.route("/yesterday", methods=["GET"])
+@app.route("/yesterday", methods=["POST"])
 def pull_yesterdays_weather():
-    print('woo')
     initialize_data()
     yesterday_date = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
     fetch_daily_weather(yesterday_date)
+    return "Success!"
 
 
 @app.route("/cities", methods=["POST"])
