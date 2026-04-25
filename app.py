@@ -24,7 +24,7 @@ def pull_yesterdays_weather():
 
 @app.route("/cities", methods=["POST"])
 def get_city_weather():
-    fetcher.initialize_data()
+    initialize_data()
     data = request.get_json()
     city_data_results = []
     for city_idx in data.get('cities'):
