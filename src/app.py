@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template, jsonify
-import collector.data_fetcher as fetcher
-import analyzer.data_analyzer as analyzer
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'collector')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'analyzer')))
+import collector.data_fetcher as fetcher
+import analyzer.data_analyzer as analyzer
 
 
 app = Flask(__name__)
