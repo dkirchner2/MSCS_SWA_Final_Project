@@ -90,12 +90,12 @@ class TestDataFetcher(unittest.TestCase):
 
 
     @patch('collector.data_fetcher.fetch_daily_weather')
+    @patch('collector.data_fetcher.datetime',wraps=datetime)
     @patch('os.path.join')
-    def test_initialize_weather_data_calls_api(self, mock_os, mock_daily):
+    def test_initialize_weather_data_calls_api(self, mock_os, mock_datetime, mock_daily):
         mock_os.return_value = self.BASE_DIR + '/test_data/test_weather_data'
         fake_date = datetime.strptime('2026-04-25', '%Y-%m-%d')
-        with patch('datetime.datetime', wraps=datetime) as dt:
-            dt.now.return_value = fake_date
+        mock_datetime.now.return_value = fake_date
         data_fetcher.initialize_weather_data(self.conn)
         self.assertEqual(mock_daily.call_count, 8)
 
