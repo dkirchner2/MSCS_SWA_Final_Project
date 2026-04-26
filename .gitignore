@@ -1,4 +1,4 @@
 .DS_Store
-src/__pycache__/
-src/analyzer/__pycache__/
-src/collector/__pycache__/
+__pycache__/
+analyzer/__pycache__/
+collector/__pycache__/

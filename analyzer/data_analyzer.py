@@ -6,10 +6,6 @@ def get_monthly_weather_data(raw_city_data_df):
     raw_city_data_df['sunlightDuration'] = raw_city_data_df['sunlightDuration'] / 3600
     raw_city_data_df['year'] = raw_city_data_df['entryDate'].str[:4]
     raw_city_data_df['month'] = raw_city_data_df['entryDate'].str[5:7]
-    
-    # total_monthly_rain = raw_city_data_df['rainInches', 'snowInches].groupby(['month', 'year']).sum(numeric_only=True)
-    # avg_monthly_rain = total_monthly_rain.groupby(['year']).mean().apply(lambda x: x.to_dict()).to_dict()
-    # result_dict['rainInches'] = avg_monthly_rain['rainInches']
 
     combined_month_data_mean = raw_city_data_df.groupby(['month']).mean(numeric_only=True).apply(lambda x: x.to_dict()).to_dict()
     combined_month_data_max = raw_city_data_df.groupby(['month']).max(numeric_only=True).apply(lambda x: x.to_dict()).to_dict()

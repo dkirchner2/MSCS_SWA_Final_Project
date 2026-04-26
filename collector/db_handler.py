@@ -15,7 +15,6 @@ def initialize_db(db_name):
             sql_script = sql_file.read()
             cursor.executescript(sql_script)
             conn.commit()
-            conn.close()
 
     return already_initialized
 
