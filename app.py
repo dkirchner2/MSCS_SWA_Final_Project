@@ -51,7 +51,7 @@ def get_app_health():
 
 @app.route("/metrics", methods=['GET'])
 def get_metrics():
-    return generate_latest()
+    return generate_latest(), 200
 
 
 if __name__ == "__main__":
